@@ -14,12 +14,12 @@ FROM base as dev
 
 ENV NODE_ENV=development
 
-RUN pnpm fetch
-
 RUN pnpm install
+
+VOLUME [ "/usr/src/app/node_modules" ]
 
 EXPOSE ${APP_DEV_PORT}
 
 USER node
 
-CMD ["pnpm", "run", "watch"]
+CMD [ "pnpm", "start" ]
