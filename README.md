@@ -11,20 +11,18 @@ These instructions will give you a copy of the project up and running on your lo
 Requirements for the software and other tools to build, test and push
 
 - [Docker](https://docs.docker.com/get-docker/)
-- [Docker Compose Plugin](https://docs.docker.com/compose/install/)
 
-### Installing
-
-To start this project in dev mode you only need docker and docker compose plugin
+Build the image
 
 ```bash
-docker compose up --build
+docker build -t snakes-ladders . --target=dev
 ```
 
-## Built With
+then run the container
 
-- [Contributor Covenant](https://www.contributor-covenant.org/) - Used for the Code of Conduct
-- [Creative Commons](https://creativecommons.org/) - Used to choose the license
+```bash
+docker run -p 8080:8080 -it --mount type=bind,source="$(pwd)",target=/usr/src/app snakes-ladders
+```
 
 ## License
 
