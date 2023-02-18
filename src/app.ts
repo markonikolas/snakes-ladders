@@ -1,5 +1,5 @@
+import { join } from 'path';
 import express, { Request, Response } from 'express';
-import path from 'path';
 import cookieParser from 'cookie-parser';
 import createError, { HttpError } from 'http-errors';
 import logger from 'morgan';
@@ -9,7 +9,7 @@ import indexRouter from './routes/index';
 const app = express();
 
 // view engine setup
-app.set('views', path.join(__dirname, 'views'));
+app.set('views', join(__dirname, 'views'));
 app.set('view engine', 'pug');
 
 app.use(logger('dev'));
