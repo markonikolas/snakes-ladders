@@ -22,4 +22,4 @@ EXPOSE ${APP_DEV_PORT}
 
 USER node
 
-CMD [ "pnpm", "start" ]
+CMD [ "pnpm", "run", "dev", "--host=0.0.0.0", "--port=8080" ]
