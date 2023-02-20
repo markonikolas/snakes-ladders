@@ -4,4 +4,4 @@ import Board from './class/Concrete/Board';
 
 const boardElement = document.querySelector<HTMLElement>('#board');
 
-new Board(boardElement, { size: 8 })
+new Board(boardElement, { size: 10 })

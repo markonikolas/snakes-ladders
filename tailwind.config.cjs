@@ -2,7 +2,11 @@
 module.exports = {
 	content: ['./index.html', './src/*.ts', './src/**/*.{js,ts,jsx,tsx}'],
 	theme: {
-		extend: {},
+		extend: {
+			fontFamily: {
+				primary: 'Comic Neue',
+			},
+		},
 	},
 	/**
 	 * Purgecss whitelist patterns
@@ -10,6 +14,7 @@ module.exports = {
 	 * up to 12x12 grid mesh for the board.
 	 */
 	safelist: [
+		// grid cols & rows
 		'grid-cols-4',
 		'grid-rows-4',
 		'grid-cols-5',
@@ -28,6 +33,21 @@ module.exports = {
 		'grid-rows-11',
 		'grid-cols-12',
 		'grid-rows-12',
+
+		// colors
+		'bg-green-300',
+		'bg-red-300',
+		'bg-amber-300',
+		'bg-indigo-300',
+		'bg-orange-300',
+		'bg-yellow-300',
+		'bg-emerald-300',
+		'bg-purple-300',
+		'bg-amber-300',
+		'bg-pink-300',
+		'bg-rose-300',
+		'bg-teal-300',
+		'bg-blue-300',
 	],
 	plugins: [],
 };
