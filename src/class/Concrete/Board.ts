@@ -1,15 +1,21 @@
 import AbstractElement from '../Abstract/AbstractElement';
+import { IBoardOptions } from '../Interfaces/Board';
 
 class Board extends AbstractElement {
-    constructor(element: HTMLElement | null) {
+    public gridSize: number;
+
+    constructor(element: HTMLElement | null, opts: IBoardOptions) {
         super(element);
 
+        this.gridSize = opts.size;
         this.generateGrid();
     }
 
     private generateGrid() {
-        const gridSize = 10;
+        const { gridSize } = this;
         let grid: HTMLDivElement[] = [];
+
+        this.element.classList.add(`grid-cols-${gridSize}`, `grid-rows-${gridSize}`)
 
         for (let tens = gridSize - 1; tens >= 0; tens--) {
             const row: HTMLDivElement[] = [];
