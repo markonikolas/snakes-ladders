@@ -48,6 +48,7 @@ module.exports = {
 		'bg-rose-300',
 		'bg-teal-300',
 		'bg-blue-300',
+		'bg-violet-300',
 	],
 	plugins: [],
 };
