@@ -1,7 +1,7 @@
-import AbstractElement from '../Abstract/AbstractElement';
-import { IBoardOptions } from '../Interfaces/Board';
+import Element from '../abstract/Element';
+import { IBoardOptions } from '../interfaces/Board';
 
-class Board extends AbstractElement {
+class Board extends Element {
     public gridSize: number;
 
     constructor(element: HTMLElement | null, opts: IBoardOptions) {

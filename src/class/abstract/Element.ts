@@ -1,6 +1,6 @@
-import { DOMElement } from '../Interfaces/DOMElement';
+import { DOMElement } from '../interfaces/DOMElement';
 
-abstract class AbstractElement implements DOMElement {
+abstract class Element implements DOMElement {
     private _element: HTMLElement;
 
     constructor(element: HTMLElement | null) {
@@ -17,4 +17,4 @@ abstract class AbstractElement implements DOMElement {
     }
 }
 
-export default AbstractElement;
+export default Element;
