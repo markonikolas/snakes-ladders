@@ -3,7 +3,7 @@ import { IBoardOptions } from '../interfaces/Board';
 
 class Board extends Element {
     public gridSize: number;
-    public colors = ['amber', 'pink', 'rose', 'teal', 'yellow', 'blue', 'red', 'green', 'pink', 'emerald', 'indigo', 'violet'];
+    public colors = ['amber', 'pink', 'rose', 'teal', 'yellow', 'blue', 'red', 'green', 'pink', 'cyan', 'indigo', 'violet'];
 
     constructor(element: HTMLElement | null, opts: IBoardOptions) {
         super(element);
@@ -27,8 +27,7 @@ class Board extends Element {
                 const color = Math.random() > 0.5 ? colors.shift() : colors.pop();
 
                 cell.innerText = `${tens * gridSize + unit}`;
-                cell.classList.add('p-2')
-                cell.classList.add(`bg-${color}-300`)
+                cell.classList.add('p-2', `bg-${color}-300`);
 
                 row.push(cell);
             }
