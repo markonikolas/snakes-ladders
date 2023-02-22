@@ -9,10 +9,9 @@ class Board extends Element {
         super(element);
 
         this.gridSize = opts.size;
-        this.generateGrid();
     }
 
-    private generateGrid() {
+    public generateGrid() {
         const { gridSize } = this;
         let grid: HTMLDivElement[] = [];
 
