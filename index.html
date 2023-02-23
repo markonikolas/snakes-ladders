@@ -10,14 +10,12 @@
 		<link href="https://fonts.googleapis.com/css2?family=Comic+Neue:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet" />
 	</head>
 	<body>
-		<main id="game" class="flex flex-col">
+		<main id="game" class="flex flex-col h-screen">
 			<section id="indicator" class="text-gray-800 bg-gray-200 h-36 w-full p-4 gap-y-6 flex flex-col">
 				<h1 class="text-4xl font-bold">Snakes and ladders</h1>
 				<div class="text-xl font-bold">Turn: <span id="indicator-player">Player 1</span></div>
 			</section>
-			<section
-				id="board"
-				class="grid gap-1 p-1 h-screen bg-gray-500 font-bold font-primary text-xl text-gray-800 tracking-widest opacity-0 transition-opacity duration-1000"></section>
+			<section id="board" class="grid gap-1 p-1 h-screen font-bold font-primary text-xl text-gray-800 tracking-widest"></section>
 		</main>
 		<script type="module" src="/src/main.ts"></script>
 	</body>

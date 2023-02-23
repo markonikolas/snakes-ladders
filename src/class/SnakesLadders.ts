@@ -12,7 +12,6 @@ class SnakesLadders {
 
     public start() {
         this.board.generateGrid();
-        this.board.element.classList.remove('opacity-0')
     }
 }
 

@@ -12,4 +12,6 @@ const board = new Board(boardElement, { size: 10 })
 const indicator = new Indicator(indicatorElement);
 const game = new SnakesLadders(board, indicator);
 
-window.addEventListener('load', () => game.start())
+window.addEventListener('load', () => {
+    game.start();
+})
