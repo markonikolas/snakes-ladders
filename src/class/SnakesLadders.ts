@@ -1,17 +1,24 @@
 import Board from './components/Board';
-import Indicator from './components/Indicator';
 
 class SnakesLadders {
-    private board: Board;
-    private indicator: Indicator;
+    private readonly _board: Board;
 
-    constructor(board: Board, indicator: Indicator) {
-        this.board = board;
-        this.indicator = indicator;
+    constructor(board: Board) {
+        this._board = board;
+    }
+
+    get board() {
+        return this._board;
     }
 
     public start() {
-        this.board.generateGrid();
+        const startScreen = document.getElementById('start-screen');
+
+        startScreen?.classList.add('opacity-0');
+
+        setTimeout(() => {
+            startScreen?.remove()
+        }, 1000);
     }
 }
 
