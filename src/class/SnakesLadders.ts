@@ -11,14 +11,17 @@ class SnakesLadders {
         return this._board;
     }
 
-    public start() {
+    private removeStartScreen() {
         const startScreen = document.getElementById('start-screen');
-
         startScreen?.classList.add('opacity-0');
 
         setTimeout(() => {
-            startScreen?.remove()
+            startScreen?.remove();
         }, 1000);
+    }
+
+    public start() {
+        this.removeStartScreen();
     }
 }
 
