@@ -4,16 +4,20 @@ import Board from './class/components/Board';
 
 import SnakesLadders from './class/SnakesLadders';
 
-const boardElement = document.querySelector<HTMLElement>('#board');
-
-const board = new Board(boardElement, { size: 10 })
-const game = new SnakesLadders(board);
-
 window.addEventListener('load', () => {
-    game.board.generateGrid()
 
+    const boardElement = document.querySelector<HTMLElement>('#board');
     const button = document.getElementById('play');
-    button?.removeAttribute('disabled');
 
-    button?.addEventListener('click', () => game.start());
+    button?.removeAttribute('disabled');
+    button?.addEventListener('click', () => {
+        const squareCount = document.querySelector<HTMLOptionElement>('#game-size option')?.value;
+        const playerCount = document.querySelector<HTMLOptionElement>('#player-count option')?.value;
+
+        if (!squareCount || !playerCount) return;
+
+        const board = new Board(boardElement, { size: ~~squareCount, players: ~~playerCount })
+        const game = new SnakesLadders(board);
+        game.start();
+    });
 });

@@ -13,15 +13,15 @@ class SnakesLadders {
 
     private removeStartScreen() {
         const startScreen = document.getElementById('start-screen');
-        startScreen?.classList.add('opacity-0');
+        const indicator = document.getElementById('indicator')
+        indicator?.classList.remove('hidden');
 
-        setTimeout(() => {
-            startScreen?.remove();
-        }, 1000);
+        startScreen?.remove();
     }
 
     public start() {
         this.removeStartScreen();
+        this.board.generateGrid();
     }
 }
 
