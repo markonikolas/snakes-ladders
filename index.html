@@ -20,7 +20,7 @@
 					<section class="flex justify-between w-full items-center max-w-sm mt-12">
 						<label for="player-count" class="text-2xl font-bold text-gray-800">Players:</label>
 						<select name="player-count" id="player-count" class="text-2xl py-4 px-4 rounded-xl cursor-pointer">
-							<option value="2" selected>Two</option>
+							<option value="2">Two</option>
 							<option value="3">Three</option>
 							<option value="4">Four</option>
 							<option value="5">Five</option>
@@ -34,7 +34,7 @@
 						<select name="game-size" id="game-size" class="text-2xl py-4 px-4 rounded-xl cursor-pointer">
 							<option value="6">Really Small</option>
 							<option value="7">Small</option>
-							<option value="8" selected>Medium</option>
+							<option value="8">Medium</option>
 							<option value="9">Large</option>
 							<option value="10">Extra Large</option>
 							<option value="11">Too large</option>
@@ -47,6 +47,10 @@
 					</section>
 				</div>
 			</article>
+
+			<section id="indicator" class="h-36 hidden text-center p-8">
+				<div class="font-bold text-4xl">Turn: Player <span id="player-turn"></span></div>
+			</section>
 
 			<section id="board" class="grid gap-1 p-1 h-screen font-bold font-primary text-xl bg-white text-gray-800 tracking-widest"></section>
 		</main>
