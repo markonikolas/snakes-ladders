@@ -1,55 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<link rel="icon" type="image/svg+xml" href="/vite.svg" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Snakes and ladders</title>
-		<link rel="preconnect" href="https://fonts.googleapis.com" />
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-		<link href="https://fonts.googleapis.com/css2?family=Comic+Neue:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet" />
-	</head>
-	<body>
-		<main id="game" class="flex flex-col h-screen">
-			<article
-				id="start-screen"
-				class="absolute inset-0 flex justify-center items-center w-full p-12 h-screen backdrop-brightness-75 backdrop-blur-xl transition-opacity duration-700">
-				<div class="flex flex-col gap-y-10 items-center justify-center bg-white rounded-lg p-8 w-full max-w-md">
-					<h1 class="text-4xl text-center font-bold text-gray-800">Snakes and ladders</h1>
-
-					<section class="flex justify-between w-full items-center max-w-sm mt-12">
-						<label for="player-count" class="text-2xl font-bold text-gray-800">Players:</label>
-						<select name="player-count" id="player-count" class="text-2xl py-4 px-4 rounded-xl cursor-pointer">
-							<option value="2">Two</option>
-							<option value="3">Three</option>
-							<option value="4">Four</option>
-							<option value="5">Five</option>
-							<option value="6">Six</option>
-						</select>
-					</section>
-
-					<section class="flex justify-between items-center w-full max-w-sm">
-						<label for="game-size" class="text-2xl font-bold text-gray-800">Game size:</label>
-
-						<select name="game-size" id="game-size" class="text-2xl py-4 px-4 rounded-xl cursor-pointer">
-							<option value="6">Really Small</option>
-							<option value="7">Small</option>
-							<option value="8">Medium</option>
-							<option value="9">Large</option>
-							<option value="10">Extra Large</option>
-							<option value="11">Too large</option>
-							<option value="12">You have no life</option>
-						</select>
-					</section>
-
-					<section class="flex justify-between items-center w-full max-w-sm">
-						<button class="bg-green-400 rounded-xl p-4 w-full text-white font-bold" id="play">Play</button>
-					</section>
-				</div>
-			</article>
-
-			<section id="board" class="grid gap-1 p-1 h-screen font-bold font-primary text-xl bg-white text-gray-800 tracking-widest"></section>
-		</main>
-		<script type="module" src="/src/main.ts"></script>
-	</body>
+    <head>
+        <meta charset="UTF-8" />
+        <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Snakes and ladders</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Comic+Neue:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+            rel="stylesheet"
+        />
+    </head>
+    <body>
+        <main id="game" class="flex flex-col h-screen">
+            <canvas
+                id="board"
+                class="grid gap-1 p-1 h-screen font-bold font-primary text-xl bg-white text-gray-800 tracking-widest"
+            ></canvas>
+        </main>
+        <script type="module" src="/src/main.ts"></script>
+    </body>
 </html>
