@@ -1,10 +1,13 @@
 import Board from './components/Board';
+import { IGameOpts } from './interfaces/Game';
 
 class SnakesLadders {
     private readonly _board: Board;
+    private readonly _players;
 
-    constructor(board: Board) {
+    constructor(board: Board, opts: IGameOpts) {
         this._board = board;
+        this._players = opts.players;
     }
 
     get board() {
@@ -21,7 +24,7 @@ class SnakesLadders {
 
     public start() {
         this.removeStartScreen();
-        this.board.generateGrid();
+        this._board.generateGrid();
     }
 }
 

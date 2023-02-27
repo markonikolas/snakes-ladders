@@ -3,7 +3,6 @@ import { IBoardField, IBoardOptions } from '../interfaces/Board';
 
 class Board extends Element {
     public gridSize: number;
-    public players: number;
     public colors = ['amber', 'pink', 'rose', 'teal', 'yellow', 'blue', 'red', 'green', 'pink', 'cyan', 'indigo', 'violet'];
 
     public squares: IBoardField[] = [
@@ -20,7 +19,6 @@ class Board extends Element {
         super(element);
 
         this.gridSize = opts.size;
-        this.players = opts.players;
     }
 
     public generateGrid() {
