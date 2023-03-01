@@ -1,25 +1,18 @@
-import './style.css'
+import "./style.css";
 
-import Board from './class/components/Board';
+import Board from "./class/components/Board";
 
-import SnakesLadders from './class/SnakesLadders';
+import SnakesLadders from "./class/SnakesLadders";
 
-window.addEventListener('load', () => {
-    const boardElement = document.getElementById('board');
-    const button = document.getElementById('play');
+try {
+    const canvas = document.querySelector<HTMLCanvasElement>("#board")?.getContext('2d');
 
-    button?.removeAttribute('disabled');
+    if (!canvas) throw new Error("Game board is missing.");
 
-    button?.addEventListener('click', () => {
-        const squareCount = document.querySelector<HTMLSelectElement>('#game-size')?.value;
-        const playerCount = document.querySelector<HTMLSelectElement>('#player-count')?.value;
+    const board = new Board(canvas);
 
-        if (!squareCount || !playerCount) return;
+    new SnakesLadders(board);
 
-        const board = new Board(boardElement, { size: ~~squareCount })
-
-        const game = new SnakesLadders(board, { players: ~~playerCount });
-
-        game.start();
-    });
-});
+} catch (error) {
+    console.error(error);
+}

@@ -1,31 +1,18 @@
-import Board from './components/Board';
-import { IGameOpts } from './interfaces/Game';
+import Board from "./components/Board";
+import GameBoard from './interface/GameBoard';
 
-class SnakesLadders {
-    private readonly _board: Board;
-    private readonly _players;
+class SnakesLadders implements GameBoard {
+    constructor(private _board: Board) { }
 
-    constructor(board: Board, opts: IGameOpts) {
-        this._board = board;
-        this._players = opts.players;
-    }
-
-    get board() {
+    get board(): Board {
         return this._board;
     }
 
-    private removeStartScreen() {
-        const startScreen = document.getElementById('start-screen');
-        const indicator = document.getElementById('indicator')
-        indicator?.classList.remove('hidden');
-
-        startScreen?.remove();
+    set board(board: Board) {
+        this._board = board;
     }
 
-    public start() {
-        this.removeStartScreen();
-        this._board.generateGrid();
-    }
+    public start() { }
 }
 
 export default SnakesLadders;
