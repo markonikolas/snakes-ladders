@@ -1,8 +1,6 @@
 import "./style.css";
 
-import Board from "./class/components/Board";
-
-import SnakesLadders from "./class/SnakesLadders";
+import Board from './components/Board';
 
 try {
     const canvas = document.querySelector<HTMLCanvasElement>("#board")?.getContext('2d');
@@ -11,7 +9,7 @@ try {
 
     const board = new Board(canvas);
 
-    new SnakesLadders(board);
+    board.generateGrid();
 
 } catch (error) {
     console.error(error);
