@@ -4,14 +4,14 @@ class Board implements GameBoard {
     public colors = [
         "lightpink",
         "pink",
-        "darksalmon",
+        "orange",
         "lightblue",
         "yellow",
-        "green",
+        "lightyellow",
         "lightgreen",
         "cyan",
+        "lightcyan",
         "deepskyblue",
-        "lightyellow",
     ];
 
     constructor(private _ctx: CanvasRenderingContext2D) { }
@@ -28,8 +28,8 @@ class Board implements GameBoard {
         const colSize = 10;
         const rowSize = 10;
         const gridSize = rowSize * colSize;
-        const squareWidth = 80;
-        const squareHeight = 80;
+        const squareWidth = 70;
+        const squareHeight = 70;
 
         let colors = [...this.colors];
         let direction = false;
