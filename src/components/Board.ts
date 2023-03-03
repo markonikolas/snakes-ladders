@@ -32,10 +32,10 @@ class Board implements GameBoard {
         const squareHeight = 80;
 
         let colors = [...this.colors];
-        let x = 0;
-        let y = 0;
+        let x = colSize * squareWidth;
+        let y = rowSize * squareHeight;
 
-        for (let i = gridSize; i >= 1; i--) {
+        for (let i = 1; i <= gridSize; i++) {
             const color = Math.random() > 0.5 ? colors.shift() : colors.pop();
 
             this.ctx.fillStyle = color!;
@@ -44,11 +44,11 @@ class Board implements GameBoard {
             this.ctx.font = '0.85rem sans-serif';
             this.ctx.fillText(`${i}`, x + 12, y + 20)
 
-            x += squareWidth;
+            x -= squareWidth;
 
-            if (x === squareWidth * colSize) {
-                x = 0;
-                y += squareHeight;
+            if (x === 0) {
+                x = squareWidth * colSize;
+                y -= squareHeight;
                 colors = [...this.colors]
             }
         }
